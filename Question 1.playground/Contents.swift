@@ -5,22 +5,48 @@ import UIKit
  */
 
 /**
- 
+ Answer 1a
  */
-func getAllPossiblePaths(graph: [String: [String]], from: String, to: String) -> [[String]] {
-//    var queue: [Node] = [node]
-//    var map: [Node: [Node]] = [:]
-//    while !queue.isEmpty {
-//        let currentNode = queue.removeFirst()
-//        if map[currentNode] != nil {
-//            continue
-//        }
-//        
-//        map[currentNode] = currentNode.neighbours
-//        queue.append(contentsOf: currentNode.neighbours)
-//    }
-//    return map
+struct TempPath {
+    var nodes: [String]
+    var set: Set<String>
 }
+func getAllPossiblePaths(graph: [String: [String]], from start: String, to end: String) -> [[String]] {
+    var paths: [TempPath] = [TempPath(nodes: [start], set: [start])]
+    var output: [[String]] = []
+    while !paths.isEmpty {
+        var newPaths: [TempPath] = []
+        for path in paths {
+            guard let lastNode = path.nodes.last else {
+                continue
+            }
+            
+            if lastNode == end {
+                // We found a path if we reach the end node
+                output.append(path.nodes)
+            } else {
+                // Visit all unvisited current node's neighbours
+                for neighbour in graph[lastNode] ?? [] {
+                    if !path.set.contains(neighbour) {
+                        newPaths.append(
+                            TempPath(
+                                nodes: path.nodes + [neighbour],
+                                set: path.set.union([neighbour])
+                            )
+                        )
+                    }
+                }
+            }
+        }
+        paths = newPaths
+    }
+    
+    return output
+}
+let allPossiblePaths = getAllPossiblePaths(graph: graph, from: "A", to: "H")
+
+
+// MARK: -
 
 /**
  Answer 1b

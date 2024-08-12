@@ -9,5 +9,4 @@ public let graph: [String: [String]] = [
     "F": ["C", "E", "G"],
     "G": ["F", "H"],
     "H": ["A", "E", "G"],
-
 ]
