@@ -69,6 +69,7 @@ func getLeastNumberOfHops(graph: [String: [String]], node: String) -> [String: I
         
         if let neighbours = graph[node] {
             for neighbour in neighbours {
+                // If current distance is lower, Update distance cache and explore the neighbour node
                 let neighbourDist = distance + 1
                 if neighbourDist < distances[neighbour]! {
                     distances[neighbour] = neighbourDist
