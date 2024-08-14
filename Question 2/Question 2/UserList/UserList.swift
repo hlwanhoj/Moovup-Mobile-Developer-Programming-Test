@@ -6,10 +6,31 @@
 //
 
 import Foundation
+import UIKit
 import ComposableArchitecture
+
+enum UserListSection: Hashable {
+    case `default`
+}
+
+struct UserListItem: Hashable {
+    let user: User
+    
+    var name: String {
+        if let name = user.name {
+            return [name.first, name.last].compactMap { $0 }.joined(separator: " ")
+        }
+        return "<No Name>"
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(user.id)
+    }
+}
 
 @Reducer
 class UserList {
+    @ObservableState
     struct State: Equatable {
         var users: [User] = []
         var isLoading = false
@@ -17,6 +38,13 @@ class UserList {
         
         var hasError: Bool {
             error != nil
+        }
+        
+        var snapshot: NSDiffableDataSourceSnapshot<UserListSection, UserListItem> {
+            var snapshot = NSDiffableDataSourceSnapshot<UserListSection, UserListItem>()
+            snapshot.appendSections([.default])
+            snapshot.appendItems(users.map { UserListItem(user: $0) })
+            return snapshot
         }
         
         static func == (lhs: Self, rhs: Self) -> Bool {

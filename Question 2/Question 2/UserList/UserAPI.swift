@@ -20,8 +20,13 @@ public struct UserAPI {
 extension UserAPI: DependencyKey {
     public static let liveValue = Self(
         getUsers: {
-            try await AF.request("https://api.json-generator.com/templates/-xdNcNKYtTFG/data")
-                .serializingDecodable([User].self).value
+            try await AF
+                .request(
+                    "https://api.json-generator.com/templates/-xdNcNKYtTFG/data",
+                    headers: [.authorization(bearerToken: "b2atclr0nk1po45amg305meheqf4xrjt9a1bo410")]
+                )
+                .serializingDecodable([User].self)
+                .value
         }
     )
 }

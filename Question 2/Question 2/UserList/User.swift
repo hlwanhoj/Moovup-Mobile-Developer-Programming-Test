@@ -16,6 +16,12 @@ public struct User: Decodable, Equatable {
         public let latitude: Double?
         public let longitude: Double?
     }
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case pictureUrlString = "picture"
+        case name, email, location
+    }
 
     public let id: String
     public let name: Name?
@@ -23,10 +29,8 @@ public struct User: Decodable, Equatable {
     public let pictureUrlString: String?
     public let location: Location?
     
-    enum CodingKeys: String, CodingKey {
-        case id = "_id"
-        case pictureUrlString = "picture"
-        case name, email, location
+    public var pictureUrl: URL? {
+        pictureUrlString.flatMap { URL(string: $0) }
     }
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
