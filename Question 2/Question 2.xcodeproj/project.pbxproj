@@ -18,8 +18,6 @@
 		EE4E70742C6A0E6D007D820C /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = EE4E70732C6A0E6D007D820C /* TinyConstraints */; };
 		EE4E70772C6A0E90007D820C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = EE4E70762C6A0E90007D820C /* ComposableArchitecture */; };
 		EE4E707A2C6A15B0007D820C /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4E70792C6A15B0007D820C /* UserList.swift */; };
-		EED2F6522C6B5DB8002BB07F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6512C6B5DB8002BB07F /* User.swift */; };
-		EED2F6542C6B63F2002BB07F /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6532C6B63F2002BB07F /* UserAPI.swift */; };
 		EED2F6572C6B6FCB002BB07F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EED2F6562C6B6FCB002BB07F /* Alamofire */; };
 		EED2F6592C6BB88B002BB07F /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6582C6BB88B002BB07F /* UserListViewController.swift */; };
 		EED2F65C2C6BB91A002BB07F /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F65B2C6BB91A002BB07F /* UIView+Subviews.swift */; };
@@ -28,6 +26,7 @@
 		EED2F6632C6CAD13002BB07F /* UIStackView+SubviewHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6622C6CAD13002BB07F /* UIStackView+SubviewHandling.swift */; };
 		EED2F6652C6CADF3002BB07F /* UIStackView+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6642C6CADF3002BB07F /* UIStackView+Creation.swift */; };
 		EED2F6672C6CB514002BB07F /* ImagePlaceholders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6662C6CB514002BB07F /* ImagePlaceholders.swift */; };
+		EED2F66D2C6D1941002BB07F /* API in Frameworks */ = {isa = PBXBuildFile; productRef = EED2F66C2C6D1941002BB07F /* API */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,14 +59,13 @@
 		EE4E70602C6A0E1E007D820C /* Question_2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question_2UITests.swift; sourceTree = "<group>"; };
 		EE4E70622C6A0E1E007D820C /* Question_2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question_2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EE4E70792C6A15B0007D820C /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
-		EED2F6512C6B5DB8002BB07F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		EED2F6532C6B63F2002BB07F /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		EED2F6582C6BB88B002BB07F /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		EED2F65B2C6BB91A002BB07F /* UIView+Subviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
 		EED2F65D2C6BBB9E002BB07F /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
 		EED2F6622C6CAD13002BB07F /* UIStackView+SubviewHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+SubviewHandling.swift"; sourceTree = "<group>"; };
 		EED2F6642C6CADF3002BB07F /* UIStackView+Creation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Creation.swift"; sourceTree = "<group>"; };
 		EED2F6662C6CB514002BB07F /* ImagePlaceholders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePlaceholders.swift; sourceTree = "<group>"; };
+		EED2F66A2C6D16D2002BB07F /* API */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = API; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +76,7 @@
 				EE4E70712C6A0E64007D820C /* Then in Frameworks */,
 				EED2F6572C6B6FCB002BB07F /* Alamofire in Frameworks */,
 				EE4E70742C6A0E6D007D820C /* TinyConstraints in Frameworks */,
+				EED2F66D2C6D1941002BB07F /* API in Frameworks */,
 				EE4E70772C6A0E90007D820C /* ComposableArchitecture in Frameworks */,
 				EED2F6612C6CA61E002BB07F /* Kingfisher in Frameworks */,
 			);
@@ -107,6 +106,7 @@
 				EE4E70552C6A0E1E007D820C /* Question 2Tests */,
 				EE4E705F2C6A0E1E007D820C /* Question 2UITests */,
 				EE4E703D2C6A0E1D007D820C /* Products */,
+				EED2F66B2C6D1941002BB07F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +125,7 @@
 			children = (
 				EE4E703F2C6A0E1D007D820C /* AppDelegate.swift */,
 				EE4E70412C6A0E1D007D820C /* SceneDelegate.swift */,
+				EED2F6692C6D1599002BB07F /* Modules */,
 				EED2F65A2C6BB905002BB07F /* Helpers */,
 				EE4E70782C6A0FA0007D820C /* UserList */,
 				EE4E70482C6A0E1E007D820C /* Assets.xcassets */,
@@ -157,8 +158,6 @@
 				EE4E70792C6A15B0007D820C /* UserList.swift */,
 				EED2F6582C6BB88B002BB07F /* UserListViewController.swift */,
 				EED2F65D2C6BBB9E002BB07F /* UserListCell.swift */,
-				EED2F6512C6B5DB8002BB07F /* User.swift */,
-				EED2F6532C6B63F2002BB07F /* UserAPI.swift */,
 			);
 			path = UserList;
 			sourceTree = "<group>";
@@ -172,6 +171,21 @@
 				EED2F6662C6CB514002BB07F /* ImagePlaceholders.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EED2F6692C6D1599002BB07F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				EED2F66A2C6D16D2002BB07F /* API */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		EED2F66B2C6D1941002BB07F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +210,7 @@
 				EE4E70762C6A0E90007D820C /* ComposableArchitecture */,
 				EED2F6562C6B6FCB002BB07F /* Alamofire */,
 				EED2F6602C6CA61E002BB07F /* Kingfisher */,
+				EED2F66C2C6D1941002BB07F /* API */,
 			);
 			productName = "Question 2";
 			productReference = EE4E703C2C6A0E1D007D820C /* Question 2.app */;
@@ -326,9 +341,7 @@
 				EED2F6652C6CADF3002BB07F /* UIStackView+Creation.swift in Sources */,
 				EE4E70402C6A0E1D007D820C /* AppDelegate.swift in Sources */,
 				EED2F65C2C6BB91A002BB07F /* UIView+Subviews.swift in Sources */,
-				EED2F6522C6B5DB8002BB07F /* User.swift in Sources */,
 				EE4E70422C6A0E1D007D820C /* SceneDelegate.swift in Sources */,
-				EED2F6542C6B63F2002BB07F /* UserAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,6 +767,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EED2F65F2C6CA61E002BB07F /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		EED2F66C2C6D1941002BB07F /* API */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = API;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

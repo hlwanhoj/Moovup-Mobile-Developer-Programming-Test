@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import ComposableArchitecture
+import API
 
 enum UserListSection: Hashable {
     case `default`

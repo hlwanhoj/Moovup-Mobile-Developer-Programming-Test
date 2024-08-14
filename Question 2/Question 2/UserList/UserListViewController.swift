@@ -11,6 +11,7 @@ import Combine
 import ComposableArchitecture
 import Then
 import TinyConstraints
+import API
 
 class UserListViewController: UIViewController, UITableViewDelegate {
     let store: Store<UserList.State, UserList.Action>
@@ -85,10 +86,10 @@ class UserListViewController: UIViewController, UITableViewDelegate {
                 withDependencies: {
                     $0.userAPI.getUsers = {
                         [
-                            User(id: "0000", name: nil, email: "abc@abc.com", pictureUrlString: nil, location: nil),
-                            User(id: "0001", name: User.Name(first: "Mei Ling", last: "Lee"), email: "def@abc.com", pictureUrlString: "https://placebear.com/222/207", location: nil),
-                            User(id: "0002", name: User.Name(first: "Hans", last: "Wong"), email: "ghi@abc.com", pictureUrlString: "https://placebear.com/400/800", location: nil),
-                            User(id: "0003", name: User.Name(first: "Alexander Benjamin Theodore Montgomery III", last: nil), email: "abc@abc.com", pictureUrlString: "https://placebear.com/800/400", location: nil),
+                            User(id: "0000", name: nil, email: "abc@abc.com"),
+                            User(id: "0001", name: User.Name(first: "Mei Ling", last: "Lee"), email: "def@abc.com", pictureUrlString: "https://placebear.com/222/207"),
+                            User(id: "0002", name: User.Name(first: "Hans", last: "Wong"), email: "ghi@abc.com", pictureUrlString: "https://placebear.com/400/800"),
+                            User(id: "0003", name: User.Name(first: "Alexander Benjamin Theodore Montgomery III", last: nil), email: "abc@abc.com", pictureUrlString: "https://placebear.com/800/400"),
                         ]
                     }
                 }
