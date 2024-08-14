@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import Combine
 import ComposableArchitecture
 import Then
 import TinyConstraints
@@ -17,7 +16,6 @@ class UserListViewController: UIViewController, UITableViewDelegate {
     let store: Store<UserList.State, UserList.Action>
     var tableView: UITableView!
     var dataSource: UITableViewDiffableDataSource<UserListSection, UserListItem>!
-    var cancellables = Set<AnyCancellable>()
     
     init(store: Store<UserList.State, UserList.Action>) {
         self.store = store
