@@ -21,7 +21,7 @@ class UserDetail {
     }
     
     var body: some ReducerOf<UserDetail> {
-        Reduce { state, action in
+        Reduce { _, _ in
             return .none
         }
     }

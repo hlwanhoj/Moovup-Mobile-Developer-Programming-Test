@@ -61,7 +61,6 @@ class UserList {
         case reload
     }
 
-    
     @Dependency(\.userAPI) var userAPI
     
     var body: some ReducerOf<UserList> {

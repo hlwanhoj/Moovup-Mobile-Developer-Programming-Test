@@ -32,7 +32,7 @@ class UserListViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         
         let tableView = UITableView(frame: .zero, style: .plain)
-        let refreshControl = UIRefreshControl(frame: .zero, primaryAction: UIAction(handler: { [weak self] action in
+        let refreshControl = UIRefreshControl(frame: .zero, primaryAction: UIAction(handler: { [weak self] _ in
             self?.store.send(.reload)
         }))
         tableView.refreshControl = refreshControl
