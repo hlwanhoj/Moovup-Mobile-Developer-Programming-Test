@@ -14,13 +14,7 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabBar.tintColor = UIColor(dynamicProvider: { trait in
-            if trait.userInterfaceStyle == .dark {
-                UIColor(white: 1, alpha: 1)
-            } else {
-                UIColor.systemBlue
-            }
-        })
+        tabBar.tintColor = Constants.Color.traitBlue
         setViewControllers([userListCoordinator.navigationController], animated: false)
     }
 }

@@ -35,13 +35,7 @@ class UserDetailLocationAlertView: UIView {
             $0.layer.cornerRadius = 8
             $0.layer.shadowOpacity = 0.3
             $0.layer.shadowOffset = CGSize(width: 2, height: 6)
-            $0.backgroundColor = UIColor(dynamicProvider: { trait in
-                if trait.userInterfaceStyle == .dark {
-                    UIColor(white: 0, alpha: 1)
-                } else {
-                    UIColor(white: 1, alpha: 1)
-                }
-            })
+            $0.backgroundColor = Constants.Color.traitWhite
         }
         hStack.do {
             $0.edgesToSuperview(insets: .uniform(16))

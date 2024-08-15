@@ -25,7 +25,7 @@
 		EED2F6612C6CA61E002BB07F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EED2F6602C6CA61E002BB07F /* Kingfisher */; };
 		EED2F6632C6CAD13002BB07F /* UIStackView+SubviewHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6622C6CAD13002BB07F /* UIStackView+SubviewHandling.swift */; };
 		EED2F6652C6CADF3002BB07F /* UIStackView+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6642C6CADF3002BB07F /* UIStackView+Creation.swift */; };
-		EED2F6672C6CB514002BB07F /* ImagePlaceholders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6662C6CB514002BB07F /* ImagePlaceholders.swift */; };
+		EED2F6672C6CB514002BB07F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6662C6CB514002BB07F /* Constants.swift */; };
 		EED2F66D2C6D1941002BB07F /* API in Frameworks */ = {isa = PBXBuildFile; productRef = EED2F66C2C6D1941002BB07F /* API */; };
 		EED2F6712C6D214C002BB07F /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6702C6D214C002BB07F /* UserDetail.swift */; };
 		EED2F6762C6D251B002BB07F /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6752C6D251B002BB07F /* UserDetailViewController.swift */; };
@@ -71,7 +71,7 @@
 		EED2F65D2C6BBB9E002BB07F /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
 		EED2F6622C6CAD13002BB07F /* UIStackView+SubviewHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+SubviewHandling.swift"; sourceTree = "<group>"; };
 		EED2F6642C6CADF3002BB07F /* UIStackView+Creation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Creation.swift"; sourceTree = "<group>"; };
-		EED2F6662C6CB514002BB07F /* ImagePlaceholders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePlaceholders.swift; sourceTree = "<group>"; };
+		EED2F6662C6CB514002BB07F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EED2F66A2C6D16D2002BB07F /* API */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = API; sourceTree = "<group>"; };
 		EED2F6702C6D214C002BB07F /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
 		EED2F6752C6D251B002BB07F /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 				EED2F65B2C6BB91A002BB07F /* UIView+Subviews.swift */,
 				EED2F6622C6CAD13002BB07F /* UIStackView+SubviewHandling.swift */,
 				EED2F6642C6CADF3002BB07F /* UIStackView+Creation.swift */,
-				EED2F6662C6CB514002BB07F /* ImagePlaceholders.swift */,
+				EED2F6662C6CB514002BB07F /* Constants.swift */,
 				EED2F6772C6DB44F002BB07F /* Formatters.swift */,
 			);
 			path = Helpers;
@@ -380,7 +380,7 @@
 				EED2F6632C6CAD13002BB07F /* UIStackView+SubviewHandling.swift in Sources */,
 				EED2F6712C6D214C002BB07F /* UserDetail.swift in Sources */,
 				EED2F67E2C6DD96E002BB07F /* UserListCoordinator.swift in Sources */,
-				EED2F6672C6CB514002BB07F /* ImagePlaceholders.swift in Sources */,
+				EED2F6672C6CB514002BB07F /* Constants.swift in Sources */,
 				EE4E707A2C6A15B0007D820C /* UserList.swift in Sources */,
 				EED2F6782C6DB44F002BB07F /* Formatters.swift in Sources */,
 				EED2F6652C6CADF3002BB07F /* UIStackView+Creation.swift in Sources */,

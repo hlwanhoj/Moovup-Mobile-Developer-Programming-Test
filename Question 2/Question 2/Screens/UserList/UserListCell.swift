@@ -27,7 +27,7 @@ class UserListCell: UITableViewCell {
                 .setProcessor(Self.processor)
                 .scaleFactor(UIScreen.main.scale)
                 .loadDiskFileSynchronously()
-                .placeholder(ImagePlaceholders.listItem)
+                .placeholder(Constants.ImagePlaceholders.listItem)
                 .fade(duration: 0.25)
                 .set(to: iconView)
         }

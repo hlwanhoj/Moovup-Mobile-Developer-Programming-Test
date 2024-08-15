@@ -63,13 +63,7 @@ class UserDetailViewController: UIViewController {
         }
         
         view.do {
-            $0.backgroundColor = UIColor(dynamicProvider: { trait in
-                if trait.userInterfaceStyle == .dark {
-                    UIColor(white: 0, alpha: 1)
-                } else {
-                    UIColor(white: 1, alpha: 1)
-                }
-            })
+            $0.backgroundColor = Constants.Color.traitWhite
         }
         vStack.do {
             $0.edgesToSuperview()
@@ -131,7 +125,7 @@ class UserDetailViewController: UIViewController {
                 .setProcessor(Self.processor)
                 .scaleFactor(UIScreen.main.scale)
                 .loadDiskFileSynchronously()
-                .placeholder(ImagePlaceholders.listItem)
+                .placeholder(Constants.ImagePlaceholders.listItem)
                 .fade(duration: 0.25)
                 .set(to: iconView)
         }

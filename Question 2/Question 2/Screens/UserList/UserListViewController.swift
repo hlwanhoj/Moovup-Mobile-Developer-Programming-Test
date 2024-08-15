@@ -16,6 +16,7 @@ class UserListViewController: UIViewController, UITableViewDelegate {
     private let store: Store<UserList.State, UserList.Action>
     private lazy var tableView = UITableView(frame: .zero, style: .plain)
     private var dataSource: UITableViewDiffableDataSource<UserListSection, UserListItem>?
+    var didSelectUser: ((User) -> Void)?
     
     init(store: Store<UserList.State, UserList.Action>) {
         self.store = store
@@ -86,17 +87,7 @@ class UserListViewController: UIViewController, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let item = dataSource?.itemIdentifier(for: indexPath) {
-            let detailVC = UserDetailViewController(
-                store: Store(
-                    initialState: UserDetail.State(
-                        user: item.user
-                    ),
-                    reducer: {
-                        UserDetail()
-                    }
-                )
-            )
-            navigationController?.pushViewController(detailVC, animated: true)
+            didSelectUser?(item.user)
         }
     }
 }
