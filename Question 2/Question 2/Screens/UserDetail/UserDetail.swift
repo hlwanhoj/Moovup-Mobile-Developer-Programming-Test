@@ -17,7 +17,7 @@ class UserDetail {
         let user: User
         
         var locationAlertText: String {
-            "Location not found for current user."
+            String(localized: "user-detail-location-alert")
         }
     }
     

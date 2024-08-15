@@ -31,6 +31,7 @@
 		EED2F6762C6D251B002BB07F /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6752C6D251B002BB07F /* UserDetailViewController.swift */; };
 		EED2F6782C6DB44F002BB07F /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6772C6DB44F002BB07F /* Formatters.swift */; };
 		EED2F67A2C6DCABC002BB07F /* UserDetailLocationAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6792C6DCABC002BB07F /* UserDetailLocationAlertView.swift */; };
+		EED2F67C2C6DD021002BB07F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EED2F67B2C6DD021002BB07F /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		EED2F6752C6D251B002BB07F /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		EED2F6772C6DB44F002BB07F /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		EED2F6792C6DCABC002BB07F /* UserDetailLocationAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailLocationAlertView.swift; sourceTree = "<group>"; };
+		EED2F67B2C6DD021002BB07F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				EE4E70482C6A0E1E007D820C /* Assets.xcassets */,
 				EE4E704A2C6A0E1E007D820C /* LaunchScreen.storyboard */,
 				EE4E704D2C6A0E1E007D820C /* Info.plist */,
+				EED2F67B2C6DD021002BB07F /* Localizable.xcstrings */,
 			);
 			path = "Question 2";
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			files = (
 				EE4E70492C6A0E1E007D820C /* Assets.xcassets in Resources */,
 				EE4E704C2C6A0E1E007D820C /* Base in Resources */,
+				EED2F67C2C6DD021002BB07F /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
