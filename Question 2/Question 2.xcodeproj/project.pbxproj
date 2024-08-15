@@ -28,6 +28,9 @@
 		EED2F6672C6CB514002BB07F /* ImagePlaceholders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6662C6CB514002BB07F /* ImagePlaceholders.swift */; };
 		EED2F66D2C6D1941002BB07F /* API in Frameworks */ = {isa = PBXBuildFile; productRef = EED2F66C2C6D1941002BB07F /* API */; };
 		EED2F6712C6D214C002BB07F /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6702C6D214C002BB07F /* UserDetail.swift */; };
+		EED2F6762C6D251B002BB07F /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6752C6D251B002BB07F /* UserDetailViewController.swift */; };
+		EED2F6782C6DB44F002BB07F /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6772C6DB44F002BB07F /* Formatters.swift */; };
+		EED2F67A2C6DCABC002BB07F /* UserDetailLocationAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6792C6DCABC002BB07F /* UserDetailLocationAlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 		EED2F6662C6CB514002BB07F /* ImagePlaceholders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePlaceholders.swift; sourceTree = "<group>"; };
 		EED2F66A2C6D16D2002BB07F /* API */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = API; sourceTree = "<group>"; };
 		EED2F6702C6D214C002BB07F /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
+		EED2F6752C6D251B002BB07F /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		EED2F6772C6DB44F002BB07F /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		EED2F6792C6DCABC002BB07F /* UserDetailLocationAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailLocationAlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,7 @@
 				EED2F6622C6CAD13002BB07F /* UIStackView+SubviewHandling.swift */,
 				EED2F6642C6CADF3002BB07F /* UIStackView+Creation.swift */,
 				EED2F6662C6CB514002BB07F /* ImagePlaceholders.swift */,
+				EED2F6772C6DB44F002BB07F /* Formatters.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -194,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				EED2F6702C6D214C002BB07F /* UserDetail.swift */,
+				EED2F6752C6D251B002BB07F /* UserDetailViewController.swift */,
+				EED2F6792C6DCABC002BB07F /* UserDetailLocationAlertView.swift */,
 			);
 			path = UserDetail;
 			sourceTree = "<group>";
@@ -356,14 +365,17 @@
 			files = (
 				EED2F65E2C6BBB9E002BB07F /* UserListCell.swift in Sources */,
 				EED2F6592C6BB88B002BB07F /* UserListViewController.swift in Sources */,
+				EED2F67A2C6DCABC002BB07F /* UserDetailLocationAlertView.swift in Sources */,
 				EED2F6632C6CAD13002BB07F /* UIStackView+SubviewHandling.swift in Sources */,
 				EED2F6712C6D214C002BB07F /* UserDetail.swift in Sources */,
 				EED2F6672C6CB514002BB07F /* ImagePlaceholders.swift in Sources */,
 				EE4E707A2C6A15B0007D820C /* UserList.swift in Sources */,
+				EED2F6782C6DB44F002BB07F /* Formatters.swift in Sources */,
 				EED2F6652C6CADF3002BB07F /* UIStackView+Creation.swift in Sources */,
 				EE4E70402C6A0E1D007D820C /* AppDelegate.swift in Sources */,
 				EED2F65C2C6BB91A002BB07F /* UIView+Subviews.swift in Sources */,
 				EE4E70422C6A0E1D007D820C /* SceneDelegate.swift in Sources */,
+				EED2F6762C6D251B002BB07F /* UserDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

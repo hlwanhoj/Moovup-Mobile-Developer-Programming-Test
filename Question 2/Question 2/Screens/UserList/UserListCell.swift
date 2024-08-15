@@ -10,8 +10,8 @@ import UIKit
 import Kingfisher
 
 class UserListCell: UITableViewCell {
-    let iconView = UIImageView()
-    let titleLabel = UILabel()
+    private lazy var iconView = UIImageView()
+    private lazy var titleLabel = UILabel()
     private static let processor = DownsamplingImageProcessor(size: CGSize(width: 80, height: 80))
 
     var title: String? {

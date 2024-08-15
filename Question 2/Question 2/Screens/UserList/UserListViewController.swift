@@ -13,9 +13,9 @@ import TinyConstraints
 import API
 
 class UserListViewController: UIViewController, UITableViewDelegate {
-    let store: Store<UserList.State, UserList.Action>
-    var tableView: UITableView!
-    var dataSource: UITableViewDiffableDataSource<UserListSection, UserListItem>!
+    private let store: Store<UserList.State, UserList.Action>
+    private lazy var tableView = UITableView(frame: .zero, style: .plain)
+    private var dataSource: UITableViewDiffableDataSource<UserListSection, UserListItem>!
     
     init(store: Store<UserList.State, UserList.Action>) {
         self.store = store
@@ -43,6 +43,9 @@ class UserListViewController: UIViewController, UITableViewDelegate {
         navigationItem.do {
             $0.title = "Users"
         }
+        view.do {
+            $0.backgroundColor = .white
+        }
         tableView.do {
             $0.register(UserListCell.self, forCellReuseIdentifier: "cell")
             $0.rowHeight = 80
@@ -52,7 +55,7 @@ class UserListViewController: UIViewController, UITableViewDelegate {
         dataSource = UITableViewDiffableDataSource(tableView: tableView) { tableView, indexPath, itemIdentifier in
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             if let userCell = cell as? UserListCell {
-                userCell.title = itemIdentifier.name
+                userCell.title = UserFormatter.name(for: itemIdentifier.user)
                 userCell.iconUrl = itemIdentifier.user.pictureUrl
             }
             return cell
@@ -70,6 +73,31 @@ class UserListViewController: UIViewController, UITableViewDelegate {
         }
         
         store.send(.reload)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        for indexPath in tableView.indexPathsForSelectedRows ?? [] {
+            tableView.deselectRow(at: indexPath, animated: false)
+        }
+    }
+    
+    // MARK: - UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let item = dataSource.itemIdentifier(for: indexPath) {
+            let detailVC = UserDetailViewController(
+                store: Store(
+                    initialState: UserDetail.State(
+                        user: item.user
+                    ),
+                    reducer: {
+                        UserDetail()
+                    }
+                )
+            )
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
     }
 }
 

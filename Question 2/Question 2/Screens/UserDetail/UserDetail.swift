@@ -15,6 +15,10 @@ class UserDetail {
     @ObservableState
     struct State: Equatable {
         let user: User
+        
+        var locationAlertText: String {
+            "Location not found for current user."
+        }
     }
     
     enum Action {

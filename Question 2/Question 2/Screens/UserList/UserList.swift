@@ -17,13 +17,6 @@ enum UserListSection: Hashable {
 struct UserListItem: Hashable {
     let user: User
     
-    var name: String {
-        if let name = user.name {
-            return [name.first, name.last].compactMap { $0 }.joined(separator: " ")
-        }
-        return "<No Name>"
-    }
-    
     func hash(into hasher: inout Hasher) {
         hasher.combine(user.id)
     }
