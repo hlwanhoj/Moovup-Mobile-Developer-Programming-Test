@@ -32,6 +32,8 @@
 		EED2F6782C6DB44F002BB07F /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6772C6DB44F002BB07F /* Formatters.swift */; };
 		EED2F67A2C6DCABC002BB07F /* UserDetailLocationAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6792C6DCABC002BB07F /* UserDetailLocationAlertView.swift */; };
 		EED2F67C2C6DD021002BB07F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EED2F67B2C6DD021002BB07F /* Localizable.xcstrings */; };
+		EED2F67E2C6DD96E002BB07F /* UserListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F67D2C6DD96E002BB07F /* UserListCoordinator.swift */; };
+		EED2F6802C6DE06B002BB07F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F67F2C6DE06B002BB07F /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		EED2F6772C6DB44F002BB07F /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		EED2F6792C6DCABC002BB07F /* UserDetailLocationAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailLocationAlertView.swift; sourceTree = "<group>"; };
 		EED2F67B2C6DD021002BB07F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		EED2F67D2C6DD96E002BB07F /* UserListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCoordinator.swift; sourceTree = "<group>"; };
+		EED2F67F2C6DE06B002BB07F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +219,8 @@
 			children = (
 				EE4E70782C6A0FA0007D820C /* UserList */,
 				EED2F66E2C6D211C002BB07F /* UserDetail */,
+				EED2F67D2C6DD96E002BB07F /* UserListCoordinator.swift */,
+				EED2F67F2C6DE06B002BB07F /* TabBarController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -370,8 +376,10 @@
 				EED2F65E2C6BBB9E002BB07F /* UserListCell.swift in Sources */,
 				EED2F6592C6BB88B002BB07F /* UserListViewController.swift in Sources */,
 				EED2F67A2C6DCABC002BB07F /* UserDetailLocationAlertView.swift in Sources */,
+				EED2F6802C6DE06B002BB07F /* TabBarController.swift in Sources */,
 				EED2F6632C6CAD13002BB07F /* UIStackView+SubviewHandling.swift in Sources */,
 				EED2F6712C6D214C002BB07F /* UserDetail.swift in Sources */,
+				EED2F67E2C6DD96E002BB07F /* UserListCoordinator.swift in Sources */,
 				EED2F6672C6CB514002BB07F /* ImagePlaceholders.swift in Sources */,
 				EE4E707A2C6A15B0007D820C /* UserList.swift in Sources */,
 				EED2F6782C6DB44F002BB07F /* Formatters.swift in Sources */,

@@ -15,7 +15,7 @@ import API
 class UserListViewController: UIViewController, UITableViewDelegate {
     private let store: Store<UserList.State, UserList.Action>
     private lazy var tableView = UITableView(frame: .zero, style: .plain)
-    private var dataSource: UITableViewDiffableDataSource<UserListSection, UserListItem>!
+    private var dataSource: UITableViewDiffableDataSource<UserListSection, UserListItem>?
     
     init(store: Store<UserList.State, UserList.Action>) {
         self.store = store
@@ -63,7 +63,7 @@ class UserListViewController: UIViewController, UITableViewDelegate {
         
         observe { [weak self] in
             guard let self else { return }
-            dataSource.apply(store.snapshot)
+            dataSource?.apply(store.snapshot)
         }
         observe { [weak self] in
             guard let self else { return }
@@ -85,7 +85,7 @@ class UserListViewController: UIViewController, UITableViewDelegate {
     // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let item = dataSource.itemIdentifier(for: indexPath) {
+        if let item = dataSource?.itemIdentifier(for: indexPath) {
             let detailVC = UserDetailViewController(
                 store: Store(
                     initialState: UserDetail.State(
