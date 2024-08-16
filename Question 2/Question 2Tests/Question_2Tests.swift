@@ -30,9 +30,9 @@ final class Question_2Tests: XCTestCase {
         let clock = testClock!
         let users = defaultUsers
         let store = TestStore(
-            initialState: UserList.State(),
+            initialState: UserListFeature.State(),
             reducer: {
-                UserList()
+                UserListFeature()
             },
             withDependencies: {
                 $0.userAPI.getUsers = {
@@ -58,9 +58,9 @@ final class Question_2Tests: XCTestCase {
         let clock = testClock!
         let users = defaultUsers
         let store = TestStore(
-            initialState: UserList.State(),
+            initialState: UserListFeature.State(),
             reducer: {
-                UserList()
+                UserListFeature()
             },
             withDependencies: {
                 $0.userAPI.getUsers = {
@@ -87,9 +87,9 @@ final class Question_2Tests: XCTestCase {
     func testUserListReloadWithError() async throws {
         let clock = testClock!
         let store = TestStore(
-            initialState: UserList.State(),
+            initialState: UserListFeature.State(),
             reducer: {
-                UserList()
+                UserListFeature()
             },
             withDependencies: {
                 $0.userAPI.getUsers = {

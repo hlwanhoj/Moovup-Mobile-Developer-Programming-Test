@@ -10,13 +10,17 @@ import UIKit
 import ComposableArchitecture
 
 class MapCoordinator {
-    let store: Store<UserList.State, UserList.Action>
     let navigationController: UINavigationController
     
-    init(store: Store<UserList.State, UserList.Action>) {
-        self.store = store
-        
-        let mapVC = MapViewController(store: store)
+    init() {
+        let mapVC = MapViewController(
+            store: Store(
+                initialState: MapFeature.State(),
+                reducer: {
+                    MapFeature()
+                }
+            )
+        )
         navigationController = UINavigationController(rootViewController: mapVC)
         navigationController.navigationBar.tintColor = Constants.Color.traitBlue
         navigationController.tabBarItem = UITabBarItem(

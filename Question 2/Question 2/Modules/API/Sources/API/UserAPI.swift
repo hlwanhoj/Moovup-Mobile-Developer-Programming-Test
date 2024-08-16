@@ -9,16 +9,23 @@ import Foundation
 import Alamofire
 import ComposableArchitecture
 
-public struct UserAPI {
+/**
+ It needs to be a `class` for dependency mocking to work, as its a dependency of `UsersFetcher`, and some screen use `UsersFetcher` as dependency.
+ */
+public class UserAPI {
     enum Error: Swift.Error {
         case bundleNotFound
     }
     
     public var getUsers: () async throws -> [User]
+    
+    public init(getUsers: @escaping () async throws -> [User]) {
+        self.getUsers = getUsers
+    }
 }
 
 extension UserAPI: DependencyKey {
-    public static let liveValue = Self(
+    public static let liveValue = UserAPI(
         getUsers: {
             try await AF
                 .request(

@@ -13,12 +13,12 @@ import TinyConstraints
 import API
 
 class UserListViewController: UIViewController, UITableViewDelegate {
-    private let store: Store<UserList.State, UserList.Action>
+    private let store: Store<UserListFeature.State, UserListFeature.Action>
     private lazy var tableView = UITableView(frame: .zero, style: .plain)
     private var dataSource: UITableViewDiffableDataSource<UserListSection, UserListItem>?
     var didSelectUser: ((User) -> Void)?
     
-    init(store: Store<UserList.State, UserList.Action>) {
+    init(store: Store<UserListFeature.State, UserListFeature.Action>) {
         self.store = store
         super.init(nibName: nil, bundle: nil)
     }
@@ -68,12 +68,15 @@ class UserListViewController: UIViewController, UITableViewDelegate {
         }
         observe { [weak self] in
             guard let self else { return }
-            if !store.isLoading {
+            
+            if store.isLoading {
+                refreshControl.beginRefreshing()
+            } else {
                 refreshControl.endRefreshing()
             }
         }
         
-        store.send(.reload)
+        store.send(.listen)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -96,18 +99,23 @@ class UserListViewController: UIViewController, UITableViewDelegate {
     UINavigationController(
         rootViewController: UserListViewController(
             store: Store(
-                initialState: UserList.State(),
+                initialState: UserListFeature.State(),
                 reducer: {
-                    UserList()
+                    UserListFeature()
                 },
-                withDependencies: {
-                    $0.userAPI.getUsers = {
+                withDependencies: { dependencies in
+                    dependencies.userAPI.getUsers = {
                         [
                             User(id: "0000", name: nil, email: "abc@abc.com"),
                             User(id: "0001", name: User.Name(first: "Mei Ling", last: "Lee"), email: "def@abc.com", pictureUrlString: "https://placebear.com/222/207"),
                             User(id: "0002", name: User.Name(first: "Hans", last: "Wong"), email: "ghi@abc.com", pictureUrlString: "https://placebear.com/400/800"),
                             User(id: "0003", name: User.Name(first: "Alexander Benjamin Theodore Montgomery III", last: nil), email: "abc@abc.com", pictureUrlString: "https://placebear.com/800/400"),
                         ]
+                    }
+                    
+                    let usersFetcher = dependencies.usersFetcher
+                    Task {
+                        await usersFetcher.reload()
                     }
                 }
             )

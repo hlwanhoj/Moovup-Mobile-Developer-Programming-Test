@@ -10,13 +10,17 @@ import UIKit
 import ComposableArchitecture
 
 class UserListCoordinator {
-    let store: Store<UserList.State, UserList.Action>
     let navigationController: UINavigationController
     
-    init(store: Store<UserList.State, UserList.Action>) {
-        self.store = store
-        
-        let listVC = UserListViewController(store: store)
+    init() {
+        let listVC = UserListViewController(
+            store: Store(
+                initialState: UserListFeature.State(),
+                reducer: {
+                    UserListFeature()
+                }
+            )
+        )
         navigationController = UINavigationController(rootViewController: listVC)
         navigationController.navigationBar.tintColor = Constants.Color.traitBlue
         navigationController.tabBarItem = UITabBarItem(

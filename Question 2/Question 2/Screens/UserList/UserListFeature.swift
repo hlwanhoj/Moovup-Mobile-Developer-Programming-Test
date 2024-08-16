@@ -1,5 +1,5 @@
 //
-//  UserList.swift
+//  UserListFeature.swift
 //  Question 2
 //
 //  Created by hlwan on 12/8/2024.
@@ -23,7 +23,7 @@ struct UserListItem: Hashable {
 }
 
 @Reducer
-class UserList {
+class UserListFeature {
     @ObservableState
     struct State: Equatable {
         var users: [User] = []
@@ -47,28 +47,38 @@ class UserList {
     }
     
     enum Action {
-        case reload, receiveResponse(Result<[User], Error>)
-    }
-    
-    enum CancelID {
-        case reload
+        case listen, reload, setLoading, receiveResponse(Result<[User], Error>)
     }
 
-    @Dependency(\.userAPI) var userAPI
+    @Dependency(\.usersFetcher) var usersFetcher
     
-    var body: some ReducerOf<UserList> {
+    var body: some ReducerOf<UserListFeature> {
         Reduce { state, action in
             switch action {
-            case .reload:
-                state.isLoading = true
-                return .run { send in
-                    await send(
-                        .receiveResponse(Result<[User], Error> {
-                            try await self.userAPI.getUsers()
-                        })
-                    )
+            case .listen:
+                return .publisher {
+                    self.usersFetcher.publisher
+                        .compactMap { val in
+                            switch val {
+                            case .uninitialized:
+                                return nil
+                            case .loading:
+                                return .setLoading
+                            case let .success(users):
+                                return .receiveResponse(.success(users))
+                            case let .failure(error):
+                                return .receiveResponse(.failure(error))
+                            }
+                        }
+                        .receive(on: DispatchQueue.main)
                 }
-                .cancellable(id: CancelID.reload, cancelInFlight: true)
+            case .reload:
+                return .run(operation: { _ in
+                    await self.usersFetcher.reload()
+                })
+            case .setLoading:
+                state.isLoading = true
+                return .none
             case let .receiveResponse(result):
                 state.isLoading = false
                 switch result {

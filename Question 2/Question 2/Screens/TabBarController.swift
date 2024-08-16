@@ -10,14 +10,15 @@ import UIKit
 import ComposableArchitecture
 
 class TabBarController: UITabBarController {
-    private let store: Store<UserList.State, UserList.Action> = Store(
-        initialState: UserList.State(),
+    private let store: Store<UserListFeature.State, UserListFeature.Action> = Store(
+        initialState: UserListFeature.State(),
         reducer: {
-            UserList()
+            UserListFeature()
         }
     )
-    private lazy var userListCoordinator = UserListCoordinator(store: store)
-    private lazy var mapCoordinator = MapCoordinator(store: store)
+    private lazy var userListCoordinator = UserListCoordinator()
+    private lazy var mapCoordinator = MapCoordinator()
+    @Dependency(\.usersFetcher) var usersFetcher
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,5 +31,9 @@ class TabBarController: UITabBarController {
             ],
             animated: false
         )
+        
+        Task {
+            await usersFetcher.reload()
+        }
     }
 }

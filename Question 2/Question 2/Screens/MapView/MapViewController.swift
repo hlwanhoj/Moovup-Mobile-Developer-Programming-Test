@@ -14,10 +14,10 @@ import TinyConstraints
 import API
 
 class MapViewController: UIViewController, MKMapViewDelegate {
-    private let store: Store<UserList.State, UserList.Action>
+    private let store: Store<MapFeature.State, MapFeature.Action>
     private lazy var mapView = MKMapView()
     
-    init(store: Store<UserList.State, UserList.Action>) {
+    init(store: Store<MapFeature.State, MapFeature.Action>) {
         self.store = store
         super.init(nibName: nil, bundle: nil)
     }
@@ -46,6 +46,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         observe { [weak self] in
             guard let self else { return }
             
+            mapView.removeAnnotations(mapView.annotations)
+            
             let annotations = store.users
                 .compactMap { user -> MKPointAnnotation? in
                     if let coordinate = UserFormatter.coordinate(for: user) {
@@ -60,7 +62,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             mapView.showAnnotations(annotations, animated: false)
         }
         
-        store.send(.reload)
+        store.send(.listen)
     }
     
     // MARK: - MKMapViewDelegate
@@ -91,12 +93,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     UINavigationController(
         rootViewController: MapViewController(
             store: Store(
-                initialState: UserList.State(),
+                initialState: MapFeature.State(),
                 reducer: {
-                    UserList()
+                    MapFeature()
                 },
-                withDependencies: {
-                    $0.userAPI.getUsers = {
+                withDependencies: { dependencies in
+                    dependencies.userAPI.getUsers = {
                         [
                             User(
                                 id: "0000",
@@ -125,6 +127,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                                 location: User.Location(latitude: 22.39, longitude: 114.08)
                             ),
                         ]
+                    }
+                    
+                    let usersFetcher = dependencies.usersFetcher
+                    Task {
+                        await usersFetcher.reload()
                     }
                 }
             )
