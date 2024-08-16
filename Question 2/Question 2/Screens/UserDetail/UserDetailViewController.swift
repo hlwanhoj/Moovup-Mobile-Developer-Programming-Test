@@ -16,14 +16,14 @@ import API
 
 class UserDetailViewController: UIViewController {
     private static let processor = DownsamplingImageProcessor(size: CGSize(width: 80, height: 80))
-    private let store: Store<UserDetail.State, UserDetail.Action>
+    private let store: Store<UserDetailFeature.State, UserDetailFeature.Action>
     private lazy var mapView = MKMapView()
     private lazy var locationAlertView = UserDetailLocationAlertView()
     private lazy var iconView = UIImageView()
     private lazy var titleLabel = UILabel()
     private lazy var emailLabel = UILabel()
     
-    init(store: Store<UserDetail.State, UserDetail.Action>) {
+    init(store: Store<UserDetailFeature.State, UserDetailFeature.Action>) {
         self.store = store
         super.init(nibName: nil, bundle: nil)
     }
@@ -136,7 +136,7 @@ class UserDetailViewController: UIViewController {
     UINavigationController(
         rootViewController: UserDetailViewController(
             store: Store(
-                initialState: UserDetail.State(
+                initialState: UserDetailFeature.State(
                     user: User(
                         id: "0003",
                         name: User.Name(first: "Alexander Benjamin Theodore Montgomery III", last: nil),
@@ -146,7 +146,7 @@ class UserDetailViewController: UIViewController {
                     )
                 ),
                 reducer: {
-                    UserDetail()
+                    UserDetailFeature()
                 }
             )
         )
@@ -156,7 +156,7 @@ class UserDetailViewController: UIViewController {
     UINavigationController(
         rootViewController: UserDetailViewController(
             store: Store(
-                initialState: UserDetail.State(
+                initialState: UserDetailFeature.State(
                     user: User(
                         id: "0003",
                         name: User.Name(first: "Alexander Benjamin Theodore Montgomery III", last: nil),
@@ -166,7 +166,7 @@ class UserDetailViewController: UIViewController {
                     )
                 ),
                 reducer: {
-                    UserDetail()
+                    UserDetailFeature()
                 }
             )
         )

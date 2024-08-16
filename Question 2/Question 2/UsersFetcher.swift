@@ -55,6 +55,7 @@ public actor UsersFetcher {
 
 extension UsersFetcher: DependencyKey {
     public static let liveValue = UsersFetcher()
+    public static var testValue = UsersFetcher()
 }
 
 public extension DependencyValues {

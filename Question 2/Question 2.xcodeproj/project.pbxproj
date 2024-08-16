@@ -21,6 +21,7 @@
 		EEC203CD2C6F4A8600AE085F /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC203CC2C6F4A8600AE085F /* MapCoordinator.swift */; };
 		EEC203CF2C6F5F6400AE085F /* UsersFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC203CE2C6F5F6400AE085F /* UsersFetcher.swift */; };
 		EEC203D12C6F752000AE085F /* MapFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC203D02C6F752000AE085F /* MapFeature.swift */; };
+		EEC203D32C6FA67900AE085F /* UsersFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC203D22C6FA67900AE085F /* UsersFetcherTests.swift */; };
 		EED2F6572C6B6FCB002BB07F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EED2F6562C6B6FCB002BB07F /* Alamofire */; };
 		EED2F6592C6BB88B002BB07F /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6582C6BB88B002BB07F /* UserListViewController.swift */; };
 		EED2F65C2C6BB91A002BB07F /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F65B2C6BB91A002BB07F /* UIView+Subviews.swift */; };
@@ -30,7 +31,7 @@
 		EED2F6652C6CADF3002BB07F /* UIStackView+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6642C6CADF3002BB07F /* UIStackView+Creation.swift */; };
 		EED2F6672C6CB514002BB07F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6662C6CB514002BB07F /* Constants.swift */; };
 		EED2F66D2C6D1941002BB07F /* API in Frameworks */ = {isa = PBXBuildFile; productRef = EED2F66C2C6D1941002BB07F /* API */; };
-		EED2F6712C6D214C002BB07F /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6702C6D214C002BB07F /* UserDetail.swift */; };
+		EED2F6712C6D214C002BB07F /* UserDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6702C6D214C002BB07F /* UserDetailFeature.swift */; };
 		EED2F6762C6D251B002BB07F /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6752C6D251B002BB07F /* UserDetailViewController.swift */; };
 		EED2F6782C6DB44F002BB07F /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6772C6DB44F002BB07F /* Formatters.swift */; };
 		EED2F67A2C6DCABC002BB07F /* UserDetailLocationAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6792C6DCABC002BB07F /* UserDetailLocationAlertView.swift */; };
@@ -73,6 +74,7 @@
 		EEC203CC2C6F4A8600AE085F /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 		EEC203CE2C6F5F6400AE085F /* UsersFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersFetcher.swift; sourceTree = "<group>"; };
 		EEC203D02C6F752000AE085F /* MapFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFeature.swift; sourceTree = "<group>"; };
+		EEC203D22C6FA67900AE085F /* UsersFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersFetcherTests.swift; sourceTree = "<group>"; };
 		EED2F6582C6BB88B002BB07F /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		EED2F65B2C6BB91A002BB07F /* UIView+Subviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
 		EED2F65D2C6BBB9E002BB07F /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
@@ -80,7 +82,7 @@
 		EED2F6642C6CADF3002BB07F /* UIStackView+Creation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Creation.swift"; sourceTree = "<group>"; };
 		EED2F6662C6CB514002BB07F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EED2F66A2C6D16D2002BB07F /* API */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = API; sourceTree = "<group>"; };
-		EED2F6702C6D214C002BB07F /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
+		EED2F6702C6D214C002BB07F /* UserDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailFeature.swift; sourceTree = "<group>"; };
 		EED2F6752C6D251B002BB07F /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		EED2F6772C6DB44F002BB07F /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		EED2F6792C6DCABC002BB07F /* UserDetailLocationAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailLocationAlertView.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				EE4E70562C6A0E1E007D820C /* Question_2Tests.swift */,
+				EEC203D22C6FA67900AE085F /* UsersFetcherTests.swift */,
 			);
 			path = "Question 2Tests";
 			sourceTree = "<group>";
@@ -216,7 +219,7 @@
 		EED2F66E2C6D211C002BB07F /* UserDetail */ = {
 			isa = PBXGroup;
 			children = (
-				EED2F6702C6D214C002BB07F /* UserDetail.swift */,
+				EED2F6702C6D214C002BB07F /* UserDetailFeature.swift */,
 				EED2F6752C6D251B002BB07F /* UserDetailViewController.swift */,
 				EED2F6792C6DCABC002BB07F /* UserDetailLocationAlertView.swift */,
 			);
@@ -399,7 +402,7 @@
 				EED2F67A2C6DCABC002BB07F /* UserDetailLocationAlertView.swift in Sources */,
 				EED2F6802C6DE06B002BB07F /* TabBarController.swift in Sources */,
 				EED2F6632C6CAD13002BB07F /* UIStackView+SubviewHandling.swift in Sources */,
-				EED2F6712C6D214C002BB07F /* UserDetail.swift in Sources */,
+				EED2F6712C6D214C002BB07F /* UserDetailFeature.swift in Sources */,
 				EED2F67E2C6DD96E002BB07F /* UserListCoordinator.swift in Sources */,
 				EED2F6672C6CB514002BB07F /* Constants.swift in Sources */,
 				EE4E707A2C6A15B0007D820C /* UserListFeature.swift in Sources */,
@@ -419,6 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEC203D32C6FA67900AE085F /* UsersFetcherTests.swift in Sources */,
 				EE4E70572C6A0E1E007D820C /* Question_2Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

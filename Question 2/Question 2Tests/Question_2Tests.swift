@@ -20,8 +20,7 @@ final class Question_2Tests: XCTestCase {
     ]
     var testClock: TestClock<Duration>!
     
-    override func setUp() {
-        super.setUp()
+    override func setUpWithError() throws {
         testClock = TestClock()
     }
     

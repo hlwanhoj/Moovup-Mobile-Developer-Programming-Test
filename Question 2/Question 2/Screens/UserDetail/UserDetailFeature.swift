@@ -1,5 +1,5 @@
 //
-//  UserDetail.swift
+//  UserDetailFeature.swift
 //  Question 2
 //
 //  Created by hlwan on 15/8/2024.
@@ -11,7 +11,7 @@ import ComposableArchitecture
 import API
 
 @Reducer
-class UserDetail {
+class UserDetailFeature {
     @ObservableState
     struct State: Equatable {
         let user: User
@@ -24,7 +24,7 @@ class UserDetail {
     enum Action {
     }
     
-    var body: some ReducerOf<UserDetail> {
+    var body: some ReducerOf<UserDetailFeature> {
         Reduce { _, _ in
             return .none
         }

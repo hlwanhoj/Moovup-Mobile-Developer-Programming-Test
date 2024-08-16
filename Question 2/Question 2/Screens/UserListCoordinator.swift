@@ -34,11 +34,11 @@ class UserListCoordinator {
             
             let detailVC = UserDetailViewController(
                 store: Store(
-                    initialState: UserDetail.State(
+                    initialState: UserDetailFeature.State(
                         user: user
                     ),
                     reducer: {
-                        UserDetail()
+                        UserDetailFeature()
                     }
                 )
             )
