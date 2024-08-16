@@ -18,6 +18,7 @@
 		EE4E70742C6A0E6D007D820C /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = EE4E70732C6A0E6D007D820C /* TinyConstraints */; };
 		EE4E70772C6A0E90007D820C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = EE4E70762C6A0E90007D820C /* ComposableArchitecture */; };
 		EE4E707A2C6A15B0007D820C /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4E70792C6A15B0007D820C /* UserList.swift */; };
+		EEC203CD2C6F4A8600AE085F /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC203CC2C6F4A8600AE085F /* MapCoordinator.swift */; };
 		EED2F6572C6B6FCB002BB07F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EED2F6562C6B6FCB002BB07F /* Alamofire */; };
 		EED2F6592C6BB88B002BB07F /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6582C6BB88B002BB07F /* UserListViewController.swift */; };
 		EED2F65C2C6BB91A002BB07F /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F65B2C6BB91A002BB07F /* UIView+Subviews.swift */; };
@@ -34,6 +35,7 @@
 		EED2F67C2C6DD021002BB07F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EED2F67B2C6DD021002BB07F /* Localizable.xcstrings */; };
 		EED2F67E2C6DD96E002BB07F /* UserListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F67D2C6DD96E002BB07F /* UserListCoordinator.swift */; };
 		EED2F6802C6DE06B002BB07F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F67F2C6DE06B002BB07F /* TabBarController.swift */; };
+		EED2F6852C6E67AD002BB07F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6842C6E67AD002BB07F /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,7 @@
 		EE4E70602C6A0E1E007D820C /* Question_2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question_2UITests.swift; sourceTree = "<group>"; };
 		EE4E70622C6A0E1E007D820C /* Question_2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question_2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EE4E70792C6A15B0007D820C /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
+		EEC203CC2C6F4A8600AE085F /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 		EED2F6582C6BB88B002BB07F /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		EED2F65B2C6BB91A002BB07F /* UIView+Subviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
 		EED2F65D2C6BBB9E002BB07F /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 		EED2F67B2C6DD021002BB07F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		EED2F67D2C6DD96E002BB07F /* UserListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCoordinator.swift; sourceTree = "<group>"; };
 		EED2F67F2C6DE06B002BB07F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		EED2F6842C6E67AD002BB07F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +174,6 @@
 		EE4E70782C6A0FA0007D820C /* UserList */ = {
 			isa = PBXGroup;
 			children = (
-				EE4E70792C6A15B0007D820C /* UserList.swift */,
 				EED2F6582C6BB88B002BB07F /* UserListViewController.swift */,
 				EED2F65D2C6BBB9E002BB07F /* UserListCell.swift */,
 			);
@@ -220,9 +223,20 @@
 				EE4E70782C6A0FA0007D820C /* UserList */,
 				EED2F66E2C6D211C002BB07F /* UserDetail */,
 				EED2F67D2C6DD96E002BB07F /* UserListCoordinator.swift */,
+				EE4E70792C6A15B0007D820C /* UserList.swift */,
 				EED2F67F2C6DE06B002BB07F /* TabBarController.swift */,
+				EED2F6832C6E66BB002BB07F /* MapView */,
+				EEC203CC2C6F4A8600AE085F /* MapCoordinator.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		EED2F6832C6E66BB002BB07F /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				EED2F6842C6E67AD002BB07F /* MapViewController.swift */,
+			);
+			path = MapView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,11 +397,13 @@
 				EED2F6672C6CB514002BB07F /* Constants.swift in Sources */,
 				EE4E707A2C6A15B0007D820C /* UserList.swift in Sources */,
 				EED2F6782C6DB44F002BB07F /* Formatters.swift in Sources */,
+				EEC203CD2C6F4A8600AE085F /* MapCoordinator.swift in Sources */,
 				EED2F6652C6CADF3002BB07F /* UIStackView+Creation.swift in Sources */,
 				EE4E70402C6A0E1D007D820C /* AppDelegate.swift in Sources */,
 				EED2F65C2C6BB91A002BB07F /* UIView+Subviews.swift in Sources */,
 				EE4E70422C6A0E1D007D820C /* SceneDelegate.swift in Sources */,
 				EED2F6762C6D251B002BB07F /* UserDetailViewController.swift in Sources */,
+				EED2F6852C6E67AD002BB07F /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

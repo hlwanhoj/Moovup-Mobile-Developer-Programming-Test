@@ -1,6 +1,17 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "tab-bar-map" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Map View"
+          }
+        }
+      }
+    },
     "tab-bar-user-list" : {
       "extractionState" : "manual",
       "localizations" : {
