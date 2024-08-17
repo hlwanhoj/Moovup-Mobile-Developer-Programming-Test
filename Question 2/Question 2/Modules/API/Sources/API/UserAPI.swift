@@ -32,6 +32,7 @@ extension UserAPI: DependencyKey {
                     "https://api.json-generator.com/templates/-xdNcNKYtTFG/data",
                     headers: [.authorization(bearerToken: "b2atclr0nk1po45amg305meheqf4xrjt9a1bo410")]
                 )
+                .validate(statusCode: 200..<300)
                 .serializingDecodable([User].self)
                 .value
         }

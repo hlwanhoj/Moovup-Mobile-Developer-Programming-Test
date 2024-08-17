@@ -73,6 +73,7 @@ class UserListFeature {
                         .receive(on: DispatchQueue.main)
                 }
             case .reload:
+                state.error = nil
                 return .run(operation: { _ in
                     await self.usersFetcher.reload()
                 })
@@ -83,7 +84,6 @@ class UserListFeature {
                 state.isLoading = false
                 switch result {
                 case let .success(users):
-                    state.error = nil
                     state.users = users
                 case let .failure(error):
                     state.error = error

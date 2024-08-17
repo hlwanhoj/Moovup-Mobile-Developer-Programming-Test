@@ -86,7 +86,7 @@ class UserDetailViewController: UIViewController {
             $0.insetsLayoutMarginsFromSafeArea = false
             $0.alignment = .center
             $0.height(80)
-            $0.edgesToSuperview(insets: .top(16), usingSafeArea: true)
+            $0.edgesToSuperview(insets: .vertical(16), usingSafeArea: true)
         }
         iconView.do {
             $0.contentMode = .scaleAspectFill

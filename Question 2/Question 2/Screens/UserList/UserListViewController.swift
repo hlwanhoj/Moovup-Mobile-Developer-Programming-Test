@@ -75,6 +75,15 @@ class UserListViewController: UIViewController, UITableViewDelegate {
                 refreshControl.endRefreshing()
             }
         }
+        observe { [weak self] in
+            guard let self else { return }
+            
+            if let error = store.error {
+                let alertVC = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                alertVC.addAction(UIAlertAction(title: "OK", style: .default))
+                present(alertVC, animated: true)
+            }
+        }
         
         store.send(.listen)
     }

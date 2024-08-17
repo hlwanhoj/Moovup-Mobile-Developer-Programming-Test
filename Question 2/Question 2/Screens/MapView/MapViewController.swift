@@ -61,6 +61,15 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             mapView.addAnnotations(annotations)
             mapView.showAnnotations(annotations, animated: false)
         }
+        observe { [weak self] in
+            guard let self else { return }
+            
+            if let error = store.error {
+                let alertVC = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                alertVC.addAction(UIAlertAction(title: "OK", style: .default))
+                present(alertVC, animated: true)
+            }
+        }
         
         store.send(.listen)
     }
