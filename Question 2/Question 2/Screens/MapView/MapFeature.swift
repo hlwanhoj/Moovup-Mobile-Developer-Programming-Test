@@ -52,7 +52,6 @@ class MapFeature {
                             }
                         }
                         .receive(on: DispatchQueue.main)
-                        .print("users fetcher")
                 }
             case .reload:
                 return .run(operation: { _ in

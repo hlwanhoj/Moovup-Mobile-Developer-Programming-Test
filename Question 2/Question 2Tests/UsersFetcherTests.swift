@@ -12,8 +12,8 @@ import API
 @testable import Question_2
 
 final class UsersFetcherTests: XCTestCase {
-    enum Error: Swift.Error {
-        case custom(String)
+    enum UsersFetcherTestError: Swift.Error {
+        case `default`(String)
     }
     
     let defaultUsers: [User] = [
@@ -39,29 +39,29 @@ final class UsersFetcherTests: XCTestCase {
                 switch idx {
                 case 0:
                     guard case .uninitialized = result else {
-                        throw Error.custom("Result should be `uninitialized`")
+                        throw UsersFetcherTestError.default("Result should be `uninitialized`")
                     }
                     Task {
                         await usersFetcher.reload()
                     }
                 case 1:
                     guard case .loading = result else {
-                        throw Error.custom("Result should be `loading`")
+                        throw UsersFetcherTestError.default("Result should be `loading`")
                     }
                 case 2:
                     guard case let .success(users) = result, users == defaultUsers else {
-                        throw Error.custom("Result should be `success`")
+                        throw UsersFetcherTestError.default("Result should be `success`")
                     }
                     Task {
                         await usersFetcher.reload()
                     }
                 case 3:
                     guard case .loading = result else {
-                        throw Error.custom("Result should be `loading`")
+                        throw UsersFetcherTestError.default("Result should be `loading`")
                     }
                 case 4:
                     guard case let .success(users) = result, users == defaultUsers else {
-                        throw Error.custom("Result should be `success`")
+                        throw UsersFetcherTestError.default("Result should be `success`")
                     }
                 default:
                     break
@@ -87,7 +87,7 @@ final class UsersFetcherTests: XCTestCase {
                 switch idx {
                 case 0:
                     guard case .uninitialized = result else {
-                        throw Error.custom("Result should be `uninitialized`")
+                        throw UsersFetcherTestError.default("Result should be `uninitialized`")
                     }
                     Task {
                         await usersFetcher.reload()
@@ -100,11 +100,11 @@ final class UsersFetcherTests: XCTestCase {
                     }
                 case 1:
                     guard case .loading = result else {
-                        throw Error.custom("Result should be `loading`")
+                        throw UsersFetcherTestError.default("Result should be `loading`")
                     }
                 case 2:
                     guard case let .success(users) = result, users == defaultUsers else {
-                        throw Error.custom("Result should be `success`")
+                        throw UsersFetcherTestError.default("Result should be `success`")
                     }
                 default:
                     break
@@ -118,7 +118,7 @@ final class UsersFetcherTests: XCTestCase {
         try await withDependencies {
             $0.userAPI.getUsers = {
                 await XCTWaiter().fulfillment(of: [XCTestExpectation()], timeout: 0.5)
-                throw Error.custom("Something went wrong")
+                throw UsersFetcherTestError.default("Something went wrong")
             }
             $0.usersFetcher = UsersFetcher()
         } operation: {
@@ -129,18 +129,18 @@ final class UsersFetcherTests: XCTestCase {
                 switch idx {
                 case 0:
                     guard case .uninitialized = result else {
-                        throw Error.custom("Result should be `uninitialized`")
+                        throw UsersFetcherTestError.default("Result should be `uninitialized`")
                     }
                     Task {
                         await usersFetcher.reload()
                     }
                 case 1:
                     guard case .loading = result else {
-                        throw Error.custom("Result should be `loading`")
+                        throw UsersFetcherTestError.default("Result should be `loading`")
                     }
                 case 2:
                     guard case .failure = result else {
-                        throw Error.custom("Result should be `failure`")
+                        throw UsersFetcherTestError.default("Result should be `failure`")
                     }
                 default:
                     break
