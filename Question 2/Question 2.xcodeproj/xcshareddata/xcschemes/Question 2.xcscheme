@@ -46,7 +46,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EE4E705B2C6A0E1E007D820C"
+               BlueprintIdentifier = "EEC203E42C706EE600AE085F"
                BuildableName = "Question 2UITests.xctest"
                BlueprintName = "Question 2UITests"
                ReferencedContainer = "container:Question 2.xcodeproj">

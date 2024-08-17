@@ -23,25 +23,42 @@ final class Question_2UITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() async throws {
+    @MainActor
+    func testUserListToDetail() async throws {
         // UI tests must launch the application that they test.
-        let app = await XCUIApplication()
-        await app.launch()
+        let app = XCUIApplication()
+        app.launchArguments.append("-disableAnimations")
+        app.launch()
+        
+        await XCTWaiter().fulfillment(of: [XCTestExpectation()], timeout: 2)
+        // Not sure why first tap is not working
+        app.staticTexts["Valentine Diaz"].tap()
+        app.staticTexts["Valentine Diaz"].tap()
 
-//        await XCTWaiter().fulfillment(of: [XCTestExpectation()], timeout: 3)
-//        let a = await app.screenshot()
-//        let tabBarControllerImage = await a.image
-//        
-//
-//        assertSnapshot(of: tabBarControllerImage, as: .image)
+        let isTitleExists = app.staticTexts["user-detail-user-title"].exists
+        let isEmailExists = app.staticTexts["user-detail-user-email"].exists
+        XCTAssert(isTitleExists)
+        XCTAssert(isEmailExists)
+        
+        app.navigationBars["Question_2.UserDetailView"].buttons["Users"].tap()
+        let isCellExists = app.staticTexts["Valentine Diaz"].exists
+        XCTAssert(isCellExists)
     }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+    
+    @MainActor
+    func testUserListToMap() async throws {
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launchArguments.append("-disableAnimations")
+        app.launch()
+        
+        // Wait for API result
+        await XCTWaiter().fulfillment(of: [XCTestExpectation()], timeout: 5)
+        app.tabBars["Tab Bar"].buttons["Map View"].tap()
+        
+        let isMarkerExist = app.otherElements["Valentine Diaz"].exists
+        XCTAssert(isMarkerExist)
+        
+        app.otherElements["Valentine Diaz"].tap()
     }
 }

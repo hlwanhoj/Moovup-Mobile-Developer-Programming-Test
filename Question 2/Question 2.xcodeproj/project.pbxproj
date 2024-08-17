@@ -23,7 +23,6 @@
 		EEC203D52C70381E00AE085F /* MapFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC203D42C70381E00AE085F /* MapFeatureTests.swift */; };
 		EEC203D72C70462B00AE085F /* UserDetailFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC203D62C70462B00AE085F /* UserDetailFeatureTests.swift */; };
 		EEC203E82C706EE600AE085F /* Question_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC203E72C706EE600AE085F /* Question_2UITests.swift */; };
-		EEC203EA2C706EE600AE085F /* Question_2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC203E92C706EE600AE085F /* Question_2UITestsLaunchTests.swift */; };
 		EEC203F52C70754400AE085F /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = EEC203F42C70754400AE085F /* SnapshotTesting */; };
 		EED2F6572C6B6FCB002BB07F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EED2F6562C6B6FCB002BB07F /* Alamofire */; };
 		EED2F6592C6BB88B002BB07F /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F6582C6BB88B002BB07F /* UserListViewController.swift */; };
@@ -79,7 +78,6 @@
 		EEC203D62C70462B00AE085F /* UserDetailFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailFeatureTests.swift; sourceTree = "<group>"; };
 		EEC203E52C706EE600AE085F /* Question 2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Question 2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC203E72C706EE600AE085F /* Question_2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question_2UITests.swift; sourceTree = "<group>"; };
-		EEC203E92C706EE600AE085F /* Question_2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question_2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EED2F6582C6BB88B002BB07F /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		EED2F65B2C6BB91A002BB07F /* UIView+Subviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
 		EED2F65D2C6BBB9E002BB07F /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				EEC203E72C706EE600AE085F /* Question_2UITests.swift */,
-				EEC203E92C706EE600AE085F /* Question_2UITestsLaunchTests.swift */,
 			);
 			path = "Question 2UITests";
 			sourceTree = "<group>";
@@ -448,7 +445,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEC203E82C706EE600AE085F /* Question_2UITests.swift in Sources */,
-				EEC203EA2C706EE600AE085F /* Question_2UITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

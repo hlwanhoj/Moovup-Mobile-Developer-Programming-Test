@@ -114,7 +114,7 @@ final class MapFeatureTests: XCTestCase {
     // MARK: - UI Snapshots
 
     @MainActor
-    func testUserDetailVC() async throws {
+    func testMapVC() async throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         // Any test you write for XCTest can be annotated as throws and async.
@@ -172,6 +172,6 @@ final class MapFeatureTests: XCTestCase {
         navVC.view.layoutIfNeeded()
 
         await XCTWaiter().fulfillment(of: [XCTestExpectation()], timeout: 3)
-        assertSnapshot(of: navVC, as: .image)
+        assertSnapshot(of: navVC, as: .image(on: .iPhone13ProMax(.portrait), precision: 3, perceptualPrecision: 3))
     }
 }

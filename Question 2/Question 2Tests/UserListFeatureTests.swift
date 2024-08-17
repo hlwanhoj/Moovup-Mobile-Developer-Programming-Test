@@ -160,6 +160,6 @@ final class UserListFeatureTests: XCTestCase {
         navVC.view.layoutIfNeeded()
 
         await XCTWaiter().fulfillment(of: [XCTestExpectation()], timeout: 3)
-        assertSnapshot(of: navVC, as: .image)
+        assertSnapshot(of: navVC, as: .image(on: .iPhone13ProMax(.portrait), precision: 3, perceptualPrecision: 3))
     }
 }

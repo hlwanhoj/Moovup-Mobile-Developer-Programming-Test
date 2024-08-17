@@ -98,9 +98,11 @@ class UserDetailViewController: UIViewController {
         }
         titleLabel.do {
             $0.numberOfLines = 0
+            $0.accessibilityIdentifier = "user-detail-user-title"
         }
         emailLabel.do {
             $0.font = UIFont.systemFont(ofSize: 14)
+            $0.accessibilityIdentifier = "user-detail-user-email"
         }
 
         observe { [weak self] in
