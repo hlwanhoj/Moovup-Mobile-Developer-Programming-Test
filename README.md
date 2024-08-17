@@ -9,7 +9,11 @@ The response to question 1a is implemented in the `getAllPossiblePaths()` functi
 ## Question 2
 Open `Question 2/Question 2.xcodeproj` and build the project with Xcode.
 
-![img](assets/002.webp)
+> [!TIP]
+> When using the plugin for the first time, be sure to trust and enable
+> it when prompted. If a macros build warning exists, select it to trust
+> and enable the macros as well.
 
-When encounters build errors like `Target 'XXX' must be enabled before it can be used.`, click on the error and click `Trust & Enable` button in the popup to enable the selected macro.
-![img](assets/003.webp)
+> [!TIP]
+> When encounters build errors like `Target 'XXX' must be enabled before it can be used.`, click on the error and click `Trust & Enable` button in the popup to enable the selected macro.
+![img](assets/002.webp)![img](assets/003.webp)
